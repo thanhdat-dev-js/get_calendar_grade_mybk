@@ -1,3 +1,4 @@
+import e from "express";
 import puppeteer from "puppeteer";
 import { minimal_args, config } from "./constants";
 
@@ -11,7 +12,7 @@ export function getData({ username, password, method }: Props) {
   return new Promise(async (resolve, reject) => {
     try {
       const browser = await puppeteer.launch({
-        headless: false,
+        headless: true,
         args: minimal_args,
       });
       const page = await browser.newPage();
@@ -25,6 +26,7 @@ export function getData({ username, password, method }: Props) {
       await page.type("#password", password);
       await page.waitForSelector(".btn-submit");
       await page.click(".btn-submit");
+      await page.waitForNavigation();
       await page.goto("https://mybk.hcmut.edu.vn/stinfo/", {
         waitUntil: "domcontentloaded",
       });
