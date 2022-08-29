@@ -4,7 +4,7 @@ import { minimal_args, config } from "./constants";
 interface Props {
   username: string;
   password: string;
-  method: "calendar" | "grade" | "test_schedule" | "all";
+  method: "schedule" | "grade" | "test_schedule" | "all";
 }
 
 export function getData({ username, password, method }: Props) {
@@ -42,12 +42,12 @@ export function getData({ username, password, method }: Props) {
             status: 1,
             data: {},
           };
-          await page.waitForSelector(config["calendar"].selector);
-          await page.click(config["calendar"].selector);
+          await page.waitForSelector(config["schedule"].selector);
+          await page.click(config["schedule"].selector);
           page.on("response", async (response) => {
-            if (response.url() == config["calendar"].url) {
-              console.log(`Get calendar successfully: ${username}`);
-              result.data.calendar = await response.json();
+            if (response.url() == config["schedule"].url) {
+              console.log(`Get schedule successfully: ${username}`);
+              result.data.schedule = await response.json();
               await page.click("#tab-menu-home");
               await page.waitForSelector(config["grade"].selector);
               await page.click(config["grade"].selector);

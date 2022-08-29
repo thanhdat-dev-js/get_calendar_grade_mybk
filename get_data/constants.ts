@@ -37,7 +37,7 @@ export const minimal_args = [
 ];
 
 export const config = {
-  calendar: {
+  schedule: {
     selector:
       "#jqxTabs > div.jqx-tabs-content.jqx-widget-content.jqx-rc-b > div > div > div:nth-child(4) > div > div > div.box-content-home > div > div:nth-child(1)",
     url: "https://mybk.hcmut.edu.vn/stinfo/lichthi/ajax_lichhoc",

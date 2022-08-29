@@ -15,7 +15,7 @@ app.post("/api/:method", (req, res) => {
   const { username, password } = req.body;
 
   if (
-    method == "calendar" ||
+    method == "schedule" ||
     method == "grade" ||
     method == "test_schedule" ||
     method == "all"
