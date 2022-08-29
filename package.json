@@ -2,10 +2,13 @@
   "name": "get-calendar-grade-mybk",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.ts"
+    "prebuild": "tslint -c tslint.json -p tsconfig.json --fix",
+    "build": "tsc",
+    "dev": "nodemon index.ts",
+    "start": "tsc && node ."
   },
   "author": "",
   "license": "MIT",
