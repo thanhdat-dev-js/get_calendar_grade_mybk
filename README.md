@@ -1,7 +1,7 @@
 # get_calender_grade_mybk
 
 
-### Get all(schedule, grade, test_schedule) from mybk
+### Get all (schedule, grade, test_schedule) from mybk
 
 ````
 POST https://get-mybk.herokuapp.com/api/all
