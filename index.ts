@@ -14,7 +14,12 @@ app.post("/api/:method", (req, res) => {
   const method = req.params.method;
   const { username, password } = req.body;
 
-  if (method == "calendar" || method == "grade" || method == "test_schedule") {
+  if (
+    method == "calendar" ||
+    method == "grade" ||
+    method == "test_schedule" ||
+    method == "all"
+  ) {
     if (username && password) {
       getData({ username, password, method })
         .then((value: any) => {
